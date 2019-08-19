@@ -108,6 +108,7 @@ app.get('*', (req, res) => {
     })
 })
 
+// Open a port to listen
 app.listen(3000, () => {
     console.log('Server is up on port 3000');
 });
