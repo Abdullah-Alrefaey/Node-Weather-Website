@@ -1,5 +1,7 @@
 const request = require('request');
 
+
+
 const forecast = (latitude, longitude, callback) => {
     const url = `https://api.darksky.net/forecast/01584145af50af504eb889ccd6795994/${latitude},${longitude}`;
 
@@ -14,7 +16,10 @@ const forecast = (latitude, longitude, callback) => {
         }
         else
         {
-            callback(undefined, `${body.daily.data[0].summary} It's currently ${body.currently.temperature} degrees out. There's a ${body.currently.precipProbability}% chance of rain.`);
+            callback(undefined, `${body.daily.data[0].summary} It's currently ${body.currently.temperature} degrees out. 
+            There's a ${body.currently.precipProbability}% chance of rain.\n
+            temperatureHigh: ${body.daily.data[0].temperatureHigh} degrees.\n
+            temperatureLow: ${body.daily.data[0].temperatureLow} degrees.`);
         }
     })
 };
