@@ -40,6 +40,7 @@ h1
 .portrait
 {
     width: 250px;
+    border-radius: 5px;
 }
 
 .main-content
